@@ -10,5 +10,7 @@ is available at:
 For more information about UniChess, please go to
     https://github.com/whily/unichess
 
-Corresponding wiki pages can be found at
+For installation, one needs to install JDK and Maven first.
+
+Wiki pages can be found at
     https://wiki.github.com/whily/unichess
