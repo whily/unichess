@@ -14,10 +14,10 @@ database management. It has following features:
 UniChess is written in Scala.
 
 For more information about UniChess, please go to
-  https://github.com/whily/unichess
+  <https://github.com/whily/unichess>
 
 Wiki pages can be found at
-  https://wiki.github.com/whily/unichess
+  <https://wiki.github.com/whily/unichess>
 
 Installation
 ------------
@@ -31,5 +31,5 @@ License
 
 UniChess is released under GNU General Public License v2, whose information
 is available at:
-  http://www.gnu.org/licenses/gpl-2.0.html
+  <http://www.gnu.org/licenses/gpl-2.0.html>
 
