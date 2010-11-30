@@ -26,6 +26,13 @@ One needs to install JRE or JDK if Java is not available.
 
 Additional dependencies include Scala 2.8.1, SWT, and sqlite.
 
+Development
+-----------
+
+UniChess is built using
+[sbt](http://code.google.com/p/simple-build-tool). Therefore for
+further information on usage of sbt, please consult relevant pages.
+
 License
 -------
 
