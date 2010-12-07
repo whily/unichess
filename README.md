@@ -23,9 +23,15 @@ Wiki pages can be found at
 Installation
 ------------
 
-One needs to install JRE or JDK if Java is not available.
+One needs to install JRE or JDK version 6 from <http://www.java.com>
+if Java is not available. Note that JDK is preinstalled on Mac OS X
+and available via package manager on many Linux systems.
 
-Additional dependencies include Scala 2.8.1, SWT, and sqlite.
+Put following jars in your classpath:
+* scala-library.jar (Scala standard library). Please make sure the 
+  version is at least 2.8.1.
+* SWT (The Standard Widget Toolkit). Please get the latest version 
+  from [here](http://www.eclipse.org/swt)
 
 Development
 -----------
@@ -44,8 +50,9 @@ The author got lots of help from open source Chess software like
 preparation, [Chess Position
 Trainer](http://www.chesspositiontrainer.com) teaches the author a
 lots about how such task could be handled by software. Last but not
-the least, [Chess Programming
-Wiki](http://chessprogramming.wikispaces.com) and
+the least, [Shannon's seminal
+paper](http://vision.unipv.it/IA1/ProgrammingaComputerforPlayingChess.pdf),
+[Chess Programming Wiki](http://chessprogramming.wikispaces.com) and
 [Wikipedia](http://en.wikipedia.org/wiki/Computer_chess) are
 invaluable sources to understand chess programming.
 
