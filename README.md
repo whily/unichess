@@ -28,6 +28,7 @@ if Java is not available. Note that JDK is preinstalled on Mac OS X
 and available via package manager on many Linux systems.
 
 Put following jars in your classpath:
+
 * scala-library.jar (Scala standard library). Please make sure the 
   version is at least 2.8.1.
 * SWT (The Standard Widget Toolkit). Please get the latest version 
