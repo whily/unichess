@@ -38,8 +38,11 @@ Development
 -----------
 
 UniChess is built using
-[sbt](http://code.google.com/p/simple-build-tool). Therefore for
-further information on usage of sbt, please consult relevant pages.
+[sbt](http://code.google.com/p/simple-build-tool). Therefore to
+compile, test, and run UniChess from a developer's point of view, one
+needs to install JDK, Scala, and sbt, then use sbt commands like
+<code>sbt update</code> to pull all the dependencies. For further
+information on usage of sbt, please consult relevant pages.
 
 Acknowledgement
 ---------------
