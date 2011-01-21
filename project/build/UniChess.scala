@@ -16,6 +16,5 @@ class UniChess(info: ProjectInfo) extends DefaultProject(info) {
 
   val scalatest = "org.scalatest" % "scalatest" % "1.2.1-SNAPSHOT"
   val specs = "org.specs" % "specs" % "1.4.3"
-  val scalacheck = "org.scala-tools.testing" % "scalacheck_2.8.0-SNAPSHOT" % 
-                    "1.8-SNAPSHOT"
+  val scalacheck = "org.scala-tools.testing" % "scalacheck_2.8.1" % "1.8"
 }
