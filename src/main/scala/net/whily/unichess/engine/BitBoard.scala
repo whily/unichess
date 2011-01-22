@@ -56,14 +56,15 @@ object Piece extends Enumeration {
 }
 import Piece._
 
+// In unit of centipawns.
 object PieceV {
   val EmptyV  = 0
-  val PawnV   = 1
-  val KnightV = 3
-  val BishopV = 3 
-  val RookV   = 5
-  val QueenV  = 9
-  val KingV   = 99 
+  val PawnV   = 100
+  val KnightV = 300
+  val BishopV = 300
+  val RookV   = 500
+  val QueenV  = 900
+  val KingV   = 9900 
 }
 import PieceV._
 
@@ -74,17 +75,13 @@ object Color extends Enumeration {
 }
 import Color._
 
-object BitBoard {
-  type BitBoard = Long
-}
-import BitBoard._
-
 /* Bitboards for one side. */
 abstract class Pieces {
-  val pieces: Array[BitBoard]  // Size is 7
+  val pieces: Array[Long]  // Size is 7
 }
 
-/** Defined according to FEN definition in
+/**
+ * Defined according to FEN definition in
  *  http://en.wikipedia.org/wiki/Forsyth-Edwads_Notation
  */
 abstract class Position {
