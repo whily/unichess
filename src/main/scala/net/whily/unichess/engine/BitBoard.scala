@@ -28,7 +28,6 @@ object Square extends Enumeration {
       A8, B8, C8, D8, E8, F8, G8, H8 = Value
   implicit def squareToInt(x: Square): Int = x.id
 }
-import Square._
 
 // Little endian mapping of files.
 object File extends Enumeration {
@@ -36,7 +35,6 @@ object File extends Enumeration {
   val FileA, FileB, FileC, FileD, FileE, FileF, FileG, FileH = Value
   implicit def fileToInt(x: File): Int = x.id
 }
-import File._
 
 // Little endian mapping of ranks.
 object Rank extends Enumeration {
@@ -44,7 +42,35 @@ object Rank extends Enumeration {
   val Rank1, Rank2, Rank3, Rank4, Rank5, Rank6, Rank7, Rank8 = Value
   implicit def rankToInt(x: Rank): Int = x.id
 }
-import Rank._
+
+// BitBoard shifts.
+object Shift {
+  private val notAFile  = 0xfefefefefefefefeL
+  private val notABFile = 0xfcfcfcfcfcfcfcfcL
+  private val notHFile  = 0x7f7f7f7f7f7f7f7fL
+  private val notGHFile = 0x3f3f3f3f3f3f3f3fL
+
+  // One step shift, post shift masks.
+  // http://chessprogramming.wikispaces.com/General+Setwise+Operations#OneStepOnly
+  def soutOne(b: Long): Long = b >>> 8
+  def nortOne(b: Long): Long = b <<  8
+  def eastOne(b: Long): Long = (b & notHFile) <<  1
+  def noEaOne(b: Long): Long = (b & notHFile) <<  9
+  def soEaOne(b: Long): Long = (b & notHFile) >>> 7
+  def westOne(b: Long): Long = (b & notAFile) >>> 1
+  def soWeOne(b: Long): Long = (b & notAFile) >>> 9
+  def noWeOne(b: Long): Long = (b & notAFile) <<  7
+
+  // Knight moves: http://chessprogramming.wikispaces.com/Knight+Pattern
+  def noNoEa(b: Long): Long = (b & notHFile)  << 17
+  def noEaEa(b: Long): Long = (b & notGHFile) << 10
+  def soEaEa(b: Long): Long = (b & notGHFile) >>> 6
+  def soSoEa(b: Long): Long = (b & notHFile)  >>> 15
+  def noNoWe(b: Long): Long = (b & notAFile)  << 15
+  def noWeWe(b: Long): Long = (b & notABFile) << 6
+  def soWeWe(b: Long): Long = (b & notABFile) >>> 10
+  def soSoWe(b: Long): Long = (b & notAFile)  >>> 17
+}
 
 /// **********************************************************************
 /// Position definition.
@@ -54,7 +80,7 @@ object Piece extends Enumeration {
   val Occupied, Pawn, Knight, Bishop, Rook, Queen, King = Value
   implicit def pieceToInt(x: Piece): Int = x.id
 }
-import Piece._
+import Piece.Piece
 
 // In unit of centipawns.
 object PieceV {
@@ -66,14 +92,13 @@ object PieceV {
   val QueenV  = 900
   val KingV   = 9900 
 }
-import PieceV._
 
 object Color extends Enumeration {
   type Color = Value
   val Black, White = Value
   implicit def colorToInt(x: Color) = x.id
 }
-import Color._
+import Color.Color
 
 /* Bitboards for one side. */
 abstract class Pieces {
