@@ -21,7 +21,7 @@ class PopCountSuite extends JUnit3Suite with Checkers {
     def naivePopCount(x: Long): Long = {
       var count = 0L
       var y = x
-      for (i <- 0 until 64) {
+      for (i ← 0 until 64) {
         count = count + (y & 1L)
         y = y >> 1
       }
@@ -29,7 +29,7 @@ class PopCountSuite extends JUnit3Suite with Checkers {
     }
 
     assert(popCount(-1L) === 64)
-    check((x: Long) => popCount(x) == naivePopCount(x))
+    check((x: Long) ⇒ popCount(x) == naivePopCount(x))
   }
 }
 

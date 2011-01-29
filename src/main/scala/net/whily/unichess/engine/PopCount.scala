@@ -22,7 +22,7 @@ object PopCount {
   // Return true if population count of BB is 1.
   def singleBB(x: Long): Boolean = (x != 0L) && ((x & (x - 1L)) == 0L)
 
-  // Return true if population count <= 1.
+  // Return true if population count ≤ 1.
   def emptyOrSingleBB(x: Long): Boolean = (x & (x - 1L)) == 0L
 
   // Return true if population count > 1.
