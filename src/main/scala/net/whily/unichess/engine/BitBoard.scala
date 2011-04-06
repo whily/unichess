@@ -114,7 +114,7 @@ abstract class Position {
   var activeColor: Color
   var castlingAvailability: Int
   var enPassantTarget: Int
-  var halfMoveCloce: Int
+  var halfMoveClock: Int
   var fullMoveNumber: Int
 
   def toFEN: String
