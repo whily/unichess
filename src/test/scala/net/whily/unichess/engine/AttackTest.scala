@@ -19,7 +19,7 @@ class KingAttackSuite extends JUnit3Suite {
     assert(King.attacks(A1) === 0x302L)
     assert(King.attacks(C1) === 0xe0aL)
     assert(King.attacks(G2) === 0xe0a0e0L)
-    //assert(King.attacks(D5) === 0x1c141c000000L)
+    assert(King.attacks(D5) === 0x1c141c000000L)
   }
 }
 
@@ -29,7 +29,7 @@ class KnightAttackSuite extends JUnit3Suite {
     assert(Knight.attacks(B1) === 0x50800L)
     assert(Knight.attacks(C1) === 0xa1100L)
     assert(Knight.attacks(D2) === 0x14220022L)
-    //assert(Knight.attacks(E3) === 0x2a4400442aL)
-    //assert(Knight.attacks(F4) === 0x508800885000L)
+    assert(Knight.attacks(E3) === 0x2844004428L)
+    assert(Knight.attacks(F4) === 0x508800885000L)
   }
 }

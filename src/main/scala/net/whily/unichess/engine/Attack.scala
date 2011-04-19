@@ -31,8 +31,7 @@ trait SimpleAttack {
   private def createAttacksArray(): Array[Long] = {
     val attacksArray = new Array[Long](64)
     for (sq ← 0 until 64) {
-      val kingSet: Long = 1 << sq.asInstanceOf[Long]
-      attacksArray(sq) = attacksCore(1 << sq)
+      attacksArray(sq) = attacksCore(1L << sq)
     }
     attacksArray
   }
